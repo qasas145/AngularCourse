@@ -1,0 +1,25 @@
+<div class="container bg-primary text-white">
+    
+    <p>child works!</p>
+    <p>Hello from the child component this my child one </p>
+    <p [class]="(bgCondition)?'bg-success':'bg-danger'">this text from the typescript file <span class="text-dark">{{testString}}</span></p>
+    <div class="mainBackground" *ngIf="!bgCondition else muhqasas" [ngStyle]="{'background' : 'yellow'}">
+        Hell yello sayed osman
+    </div>
+    <div class="InputString" [ngStyle]="{'background' : 'skyblue'}">
+        {{InputString}}
+    </div>
+    <button class="btn btn-success" (click)="sayHello()">test hello</button>
+
+    <button class="btn btn-success m-2" (click)="sendValueToParent()">parent bind </button>
+</div>
+<div class="container bg-danger text-white">
+    <h2>for binding section</h2>
+    {{valueForBinding}}
+    <input type="text" placeholder="enter a string" [(ngModel)] = "searchValue"/>
+
+    <p class="text-dark">{{searchValue}}</p>
+</div>
+<ng-template #muhqasas>
+    this the ng template directives 
+</ng-template>

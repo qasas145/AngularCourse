@@ -1,0 +1,8 @@
+<div class="container" style="height: 800px;">
+    <h1 class="text-daner">parent component</h1>
+    <app-child [InputString]="'this the text from the parent '" (SendValueToTheParent)="GetValueFromChild($event)"></app-child>
+    <br>
+    <div [ngStyle]="{'background':'green'}">
+        <p *ngFor="let name of names">{{name}}</p>
+    </div>
+</div>
