@@ -1,0 +1,13 @@
+<div class="container p-5">
+    <p>products works!</p>
+    <button (click)="getProducts()" class="btn btn-primary">getProducts</button>
+
+    <!-- returning products -->
+    <div class="row">
+        <div class="col-md-4 card p-2 text-center" *ngFor="let product of products">
+            <h1>{{product.title}}</h1>
+            <p>{{product.description}}</p>
+            <img src="{{product.images[0]}}" alt="image of this product">
+        </div>
+    </div>
+</div>

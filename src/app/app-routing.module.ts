@@ -6,6 +6,7 @@ import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
 import { PostsComponent } from './posts/posts.component';
 import { LoginComponent } from './login/login.component';
+import { ProductsComponent } from './products/products.component';
 
 const routes: Routes = [
   {path : "about", component : AboutComponent,},
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path : "child", component : ChildComponent},
   {path : "posts", component : PostsComponent},
   {path : "login", component : LoginComponent},
+  {path :"products", component : ProductsComponent},
   {path : "**", redirectTo : "parent"}
 ];
 
