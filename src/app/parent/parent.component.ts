@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { dataService } from '../g-service.service';
+import { dataService } from '../services/g-service.service';
 
 @Component({
   selector: 'app-parent',
@@ -9,6 +9,7 @@ import { dataService } from '../g-service.service';
 })
 export class ParentComponent {
   names : string[] = [];
+  newNames : string[] = [];
   constructor(private _service : dataService){
     this.names = _service.names;
   }

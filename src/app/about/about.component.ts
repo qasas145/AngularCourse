@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { dataService } from '../g-service.service';
+import { dataService } from '../services/g-service.service';
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',

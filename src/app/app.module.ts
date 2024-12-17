@@ -9,10 +9,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { PostsComponent } from './posts/posts.component';
 import { LoginComponent } from './login/login.component';
 import { ProductsComponent } from './products/products.component';
+import { SearchProductPipe } from './pipes/search-product.pipe';
+import { ProductDetailsComponent } from './product-details/product-details.component';
+import { LoaderComponent } from './loader/loader.component';
+import { LoaderInterceptor } from './interceptors/loader.interceptor';
 
 @NgModule({
   declarations: [
@@ -23,7 +27,10 @@ import { ProductsComponent } from './products/products.component';
     ChildComponent,
     PostsComponent,
     LoginComponent,
-    ProductsComponent
+    ProductsComponent,
+    SearchProductPipe,
+    ProductDetailsComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +40,14 @@ import { ProductsComponent } from './products/products.component';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide : HTTP_INTERCEPTORS,
+      useClass : LoaderInterceptor,
+      multi : true
+    }
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

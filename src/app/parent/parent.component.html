@@ -1,8 +1,18 @@
 <div class="container" style="height: 800px;">
     <h1 class="text-daner">parent component</h1>
-    <app-child [InputString]="'this the text from the parent '" (SendValueToTheParent)="GetValueFromChild($event)"></app-child>
+    <app-child [InputString]="'this the text from the parent '" (SendValueToTheParent)="GetValueFromChild($event)">
+        <h1 first class="text-danger">this the title from the first one </h1>
+        <h1 second class="text-danger">this is the danger value from the parent</h1>
+    </app-child>
     <br>
+    
     <div [ngStyle]="{'background':'green'}">
         <p *ngFor="let name of names">{{name}}</p>
     </div>
+
+    <ng-container *ngIf="newNames.length > 0">
+        <div class="bg-danger text-white" *ngFor="let name of newNames">
+            this my name{{name}}
+        </div>
+    </ng-container>
 </div>

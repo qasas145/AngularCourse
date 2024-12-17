@@ -13,6 +13,9 @@ export class LoginComponent {
     password : new FormControl(null, [Validators.minLength(3), Validators.required])
   });
   submitForm(form : FormGroup){
+    console.log("setting authorized in localstorage");
+    localStorage.setItem("authorized", "true");
+    console.log("authorized item is "+localStorage.getItem("authorized"));
     console.log(form);
     console.log('the form has been submitted sucessfully');
   }

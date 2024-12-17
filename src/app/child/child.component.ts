@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges } from '@angular/core';
-import { dataService } from '../g-service.service';
+import { dataService } from '../services/g-service.service';
 
 @Component({
   selector: 'app-child',

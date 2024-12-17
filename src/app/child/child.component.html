@@ -7,7 +7,7 @@
         Hell yello sayed osman
     </div>
     <div class="InputString" [ngStyle]="{'background' : 'skyblue'}">
-        {{InputString}}
+        this the input string {{InputString}}
     </div>
     <button class="btn btn-success" (click)="sayHello()">test hello</button>
 
@@ -19,6 +19,10 @@
     <input type="text" placeholder="enter a string" [(ngModel)] = "searchValue"/>
 
     <p class="text-dark">{{searchValue}}</p>
+</div>
+<div class="bg-primary">
+    this the danger from the parent 
+    <ng-content select="[first]"></ng-content>
 </div>
 <ng-template #muhqasas>
     this the ng template directives 

@@ -1,0 +1,9 @@
+<div class="container m-5">
+    <div class="row p-5">
+        <div class=" card p-2 text-center">
+            <h1>{{product?.title}}</h1>
+            <p>{{product?.description}}</p>
+            <img [src]="product?.images?.[0] || ''" alt="image of this product" />
+        </div>
+    </div>
+</div>

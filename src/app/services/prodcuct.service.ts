@@ -11,4 +11,7 @@ export class ProdcuctService {
   getProducts() : Observable<any>{
     return this._httpClient.get('https://dummyjson.com/products');
   }
+  getProduct(id : string | null) : Observable<any> {
+    return this._httpClient.get('https://dummyjson.com/products/'+id);
+  }
 }

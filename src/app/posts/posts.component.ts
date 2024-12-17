@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { dataService } from '../g-service.service';
+import { dataService } from '../services/g-service.service';
 import { Post } from '../post';
 import { Observable, Subscription } from 'rxjs';
 

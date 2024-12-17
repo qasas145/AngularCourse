@@ -1,13 +1,21 @@
+<app-loader></app-loader>
 <div class="container p-5">
     <p>products works!</p>
     <button (click)="getProducts()" class="btn btn-primary">getProducts</button>
 
+
+    <input type="text" placeholder="enter the title of your product" [(ngModel)]="searchValue"/>
+    <p>this is the value you searched about {{searchValue}}</p>
     <!-- returning products -->
     <div class="row">
-        <div class="col-md-4 card p-2 text-center" *ngFor="let product of products">
+        <div 
+        class="col-md-4 card p-2 text-center" 
+        *ngFor="let product of products | searchProduct : searchValue"
+        [routerLink]="['/products', product.id]"
+        >
             <h1>{{product.title}}</h1>
             <p>{{product.description}}</p>
-            <img src="{{product.images[0]}}" alt="image of this product">
+            <!-- <img src="{{product.images[0]}}" alt="image of this product"> -->
         </div>
     </div>
 </div>

@@ -8,6 +8,7 @@ import { Product } from '../interfaces/product';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent {
+  searchValue : string="";
   products :Product[] = [];
   constructor(private productService : ProdcuctService){
     this.getProducts();
